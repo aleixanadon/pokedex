@@ -8,6 +8,7 @@
 .pokemon-id,
 .pokemon-name {
   text-align: left;
+  color: black;
 }
 
 .pokemon-name {
