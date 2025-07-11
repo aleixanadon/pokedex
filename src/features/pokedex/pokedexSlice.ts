@@ -6,6 +6,7 @@ export interface PokedexState {
   value: PokemonListResponse;
   selectedGen: number;
   searchQuery: string;
+  selectedPokemon: string;
 }
 
 // Define the initial state using that type
@@ -18,6 +19,7 @@ const initialState: PokedexState = {
   },
   selectedGen: 0,
   searchQuery: "",
+  selectedPokemon: ""
 };
 
 export const pokemonSlice = createSlice({
@@ -43,6 +45,12 @@ export const pokemonSlice = createSlice({
     ) => {
       state.searchQuery = action.payload;
       console.log(state.searchQuery)
+    },
+    setPokemonDetail: (
+      state: PokedexState,
+      action: PayloadAction<string>
+    ) => {
+      state.selectedPokemon = action.payload
     }
   },
 });
